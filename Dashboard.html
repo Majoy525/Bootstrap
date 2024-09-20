@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .sidebar {
+            height: 100vh;
+            background-color: #78af94;
+            padding: 3rem;
+        }
+        .nav-header {
+            font-weight: bold;
+            margin-top: 1rem;
+            color: black;
+        }
+        .submenu {
+            display: none; /* Hide submenus by default */
+            padding-left: 2rem;
+        }
+        .content {
+            width: 97%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-sm bg-success">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <i class="fas fa-bars toggle-sidebar me-3" id="sidebarToggle"></i>
+                <ul class="navbar-nav me-auto">
+                    <img src="img/453788632_782439577429316_7959363395574187953_n.jpg" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover; margin-right: 10px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color: white;">Welcome</a>
+                    </li>
+                </ul>
+
+                <!-- Search bar -->
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+
+                <!-- User icon with dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="../index.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="nav-header">Core</div>
+            <a href="#" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+
+            <div class="nav-header">Interface</div>
+            <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#layoutsSubmenu">
+                <i class="fas fa-columns"></i> Layouts <i class="fas fa-caret-down float-end"></i>
+            </a>
+            <div class="collapse" id="layoutsSubmenu" class="submenu">
+                <a href="#" class="nav-link"><i class="fas fa-lightbulb"></i> Light Sidebar</a>
+                <a href="#" class="nav-link"><i class="fas fa-moon"></i> Dark Sidebar</a>
+                <a href="#" class="nav-link"><i class="fas fa-expand"></i> Full Layout</a>
+            </div>
+
+            <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#pagesSubmenu">
+                <i class="fas fa-file-alt"></i> Pages <i class="fas fa-caret-down float-end"></i>
+            </a>
+            <div class="collapse" id="pagesSubmenu" class="submenu">
+                <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#authSubmenu">
+                    Authentication <i class="fas fa-caret-down float-end"></i>
+                </a>
+                <div class="collapse" id="authSubmenu" class="submenu">
+                    <a href="#" class="nav-link">Login</a>
+                    <a href="#" class="nav-link">Register</a>
+                    <a href="#" class="nav-link">Forgot Password</a>
+                </div>
+                <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#errorSubmenu">
+                    Error <i class="fas fa-caret-down float-end"></i>
+                </a>
+                <div class="collapse" id="errorSubmenu" class="submenu">
+                    <a href="#" class="nav-link">401 Page</a>
+                    <a href="#" class="nav-link">404 Page</a>
+                    <a href="#" class="nav-link">500 Page</a>
+                </div>
+            </div>
+
+            <div class="nav-header">Addons</div>
+            <a href="#" class="nav-link"><i class="fas fa-chart-line"></i> Charts</a>
+            <a href="#" class="nav-link"><i class="fas fa-table"></i> Tables</a>
+        </div>
+
+        <!-- Main content -->
+        <div class="content" id="content">
+            <div class="container-fluid">
+                <h2>Welcome! <span style="color: #278336;">Mary Joy</span></h2>
+                <nav aria-label="breadcrumb"> 
+                    <a href="#" class="breadcrumb-item">Dashboard</a> 
+                    <a href="#" class="breadcrumb-item active">Chart</a>
+                </nav>
+                <div class="row">
+                    <!-- Colored Cards -->
+                    <div class="col-lg-3">
+                        <div class="card text-white bg-primary mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Primary Card</h5>
+                                <a href="#" class="btn btn-light">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card text-white bg-warning mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Warning Card</h5>
+                                <a href="#" class="btn btn-light">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card text-white bg-success mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Success Card</h5>
+                                <a href="#" class="btn btn-light">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card text-white bg-danger mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Danger Card</h5>
+                                <a href="#" class="btn btn-light">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3>Area Chart</h3>
+                        <canvas id="areaChart"></canvas>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3>Bar Chart</h3>
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome JavaScript for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <!-- Chart.js for charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Sidebar toggle functionality
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
+            const sidebar = document.querySelector('.sidebar');
+            const content = document.getElementById('content');
+
+            if (sidebar.style.width === '0px' || sidebar.style.width === '') {
+                sidebar.style.width = '250px';  // Show sidebar
+                content.style.marginLeft = '250px';  // Adjust content
+            } else {
+                sidebar.style.width = '0';  // Hide sidebar
+                content.style.marginLeft = '0';  // Adjust content
+            }
+        });
+
+        // Area Chart Example
+        const areaCtx = document.getElementById('areaChart').getContext('2d');
+        const areaChart = new Chart(areaCtx, {
+            type: 'line',
+            data: {
+                labels: ['Mar 1', 'Mar 3', 'Mar 5', 'Mar 7', 'Mar 9', 'Mar 11', 'Mar 13'],
+                datasets: [{
+                    label: 'Sessions',
+                    data: [12000, 15000, 22000, 17000, 18000, 23000, 29000],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                    fill: true,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Bar Chart Example
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        const barChart = new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Revenue',
+                    data: [12000, 19000, 3000, 5000, 2000, 3000],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
